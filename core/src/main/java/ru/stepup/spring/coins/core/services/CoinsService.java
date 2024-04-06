@@ -20,7 +20,7 @@ public class CoinsService {
         this.productService = productService;
     }
 
-    public ExecuteCoinsResponse execute(ExecuteCoinsRequest request, Integer userId) {
+    public ExecuteCoinsResponse execute(ExecuteCoinsRequest request, Long userId) {
         if (coreProperties.getNumbersBlockingEnabled()) {
             if (coreProperties.getBlockedNumbers().contains(request.number())) {
                 throw new BadRequestException("Указан заблокированный номер кошелька", "BLOCKED_ACCOUNT_NUMBER");

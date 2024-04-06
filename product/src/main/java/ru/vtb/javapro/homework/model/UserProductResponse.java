@@ -1,5 +1,7 @@
 package ru.vtb.javapro.homework.model;
 
+import java.math.BigDecimal;
+
 public class UserProductResponse {
 
     private Long productId;
@@ -7,7 +9,7 @@ public class UserProductResponse {
     private String product;
 
 
-    public UserProductResponse(Long productId, String product, String productType, String name, String accountNumber, Double balance) {
+    public UserProductResponse(Long productId, String product, String productType, String name, String accountNumber, BigDecimal balance) {
         this.productId = productId;
         this.product = product;
         this.productType = productType;
@@ -22,7 +24,7 @@ public class UserProductResponse {
 
     private String accountNumber;
 
-    private Double balance;
+    private BigDecimal balance;
 
     public String getProduct() {
         return product;
@@ -56,11 +58,11 @@ public class UserProductResponse {
         this.accountNumber = accountNumber;
     }
 
-    public Double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 

@@ -19,7 +19,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public ProductResponse getUserProduct(@RequestHeader("USERID") Integer userId) {
+    public ProductResponse getUserProduct(@RequestHeader("USERID") Long userId) {
         return productService.getUserProducts(userId);
     }
 }

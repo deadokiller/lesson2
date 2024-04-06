@@ -16,14 +16,14 @@ public class ProductService {
         this.productIntegration = productIntegration;
     }
 
-    public Optional<UserProductResponse> getUserProduct(Integer userId, String productId) {
+    public Optional<UserProductResponse> getUserProduct(Long userId, String productId) {
         var productList = productIntegration.getUserProduct(userId);
         return productList.getProductList()
                 .stream()
                 .filter(p -> p.getProductId().equals(Long.parseLong(productId)))
                 .findFirst();
     }
-    public ProductResponse getUserProducts(Integer userId) {
+    public ProductResponse getUserProducts(Long userId) {
        return productIntegration.getUserProduct(userId);
     }
 }

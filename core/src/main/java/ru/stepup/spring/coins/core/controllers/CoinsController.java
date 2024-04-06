@@ -20,7 +20,7 @@ public class CoinsController {
 
     @PostMapping("/execute")
     public ExecuteCoinsResponse execute(@RequestBody ExecuteCoinsRequest request,
-                                        @RequestHeader("USERID") Integer userId) {
+                                        @RequestHeader("USERID") Long userId) {
         return coinsService.execute(request, userId);
     }
 }
