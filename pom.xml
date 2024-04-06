@@ -8,6 +8,7 @@
 		<module>core</module>
         <module>product</module>
         <module>user</module>
+        <module>limit</module>
     </modules>
 
 	<groupId>ru.stepup.spring.coins</groupId>

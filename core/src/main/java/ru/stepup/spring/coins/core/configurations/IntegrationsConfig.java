@@ -7,10 +7,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import ru.stepup.spring.coins.core.configurations.properties.ExecutorProperties;
+import ru.stepup.spring.coins.core.configurations.properties.LimitProperties;
 import ru.stepup.spring.coins.core.configurations.properties.ProductProperties;
 import ru.stepup.spring.coins.core.exceptions.RestTemplateResponseErrorHandler;
 import ru.stepup.spring.coins.core.integrations.ExecutorIntegration;
 import ru.stepup.spring.coins.core.integrations.ExecutorIntegrationRestTemplate;
+import ru.stepup.spring.coins.core.integrations.LimitIntegration;
+import ru.stepup.spring.coins.core.integrations.LimitIntegrationRestClient;
 import ru.stepup.spring.coins.core.integrations.ProductIntegration;
 import ru.stepup.spring.coins.core.integrations.ProductIntegrationRestClient;
 
@@ -39,11 +42,9 @@ public class IntegrationsConfig {
         return new ProductIntegrationRestClient(restClient);
     }
 
-//    @Bean
-//    public ExecutorIntegration executorIntegrationRestClient(
-//            ExecutorProperties executorProperties
-//    ) {
-//        RestClient restClient = RestClient.create(executorProperties.getClient().getUrl());
-//        return new ExecutorIntegrationRestClient(restClient);
-//    }
+    @Bean
+    public LimitIntegration limitIntegration(LimitProperties limitProperties) {
+        RestClient restClient = RestClient.create(limitProperties.getClient().getUrl());
+        return new LimitIntegrationRestClient(restClient);
+    }
 }
